@@ -6,17 +6,7 @@ using System.Threading.Tasks;
 
 namespace CommonComponents.Model
 {
-    public interface INavigationService
+    interface IDialogService
     {
-
-
-        void GoBack();
-
-        void Navigate(Uri type);
-       
-        
-
-
-       
     }
 }

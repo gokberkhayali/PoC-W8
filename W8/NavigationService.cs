@@ -12,46 +12,40 @@ namespace W8
 {
     public class NavigationService : INavigationService
     {
-        public NavigationService(Frame mainFrame)
+        public Frame RootFrame
         {
-            _mainFrame = mainFrame;
+            get;
+            set;
         }
 
-        private Frame _mainFrame;
+        public NavigationService(Frame rootFrame)
+        {
+            RootFrame = rootFrame;
+        }
 
       
 
-        public void Navigate(Type type)
-        {
-            _mainFrame.Navigate(type);
-        }
-
-        public void Navigate(Type type, object parameter)
-        {
-            _mainFrame.Navigate(type, parameter);
-        }
-
-        public void Navigate(string type, object parameter)
-        {
-            _mainFrame.Navigate(Type.GetType(type), parameter);
-        }
-
         public void Navigate(Uri uri)
         {
-            //RootFrame.Navigate(uri);
+            String str =  uri.ToString();
+            String typeStr = str.Replace(".xaml", "");
+            Type type = Type.GetType(str);
+            type = Type.GetType(typeStr);
+            RootFrame.Navigate(type);
+            // RootFrame.Navigate(uri);
         }
 
-        public void Navigate(string type)
-        {
-            _mainFrame.Navigate(Type.GetType(type));
-        }
-
+        
         public void GoBack()
         {
-            if (_mainFrame.CanGoBack)
+            if (RootFrame.CanGoBack)
             {
-                _mainFrame.GoBack();
+                RootFrame.GoBack();
             }
         }
+        
+      
+       
+        
     }
 }

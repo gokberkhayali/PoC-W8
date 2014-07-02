@@ -13,6 +13,9 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Ioc;
 using Microsoft.Practices.ServiceLocation;
 using CommonComponents.Model;
+using GalaSoft.MvvmLight.Command;
+using System.Windows.Input;
+
 
 namespace CommonComponents.ViewModel
 {

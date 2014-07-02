@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CommonComponents.Model;
+using GalaSoft.MvvmLight.Ioc;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -49,6 +51,9 @@ namespace W8
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                
+                SimpleIoc.Default.Register<INavigationService>(() =>
+                { return new NavigationService(rootFrame); });
 
                 if (args.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

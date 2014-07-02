@@ -5,9 +5,32 @@
     xmlns:local="using:W8"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:ignore="http://www.ignore.com"
+    xmlns:common="using:W8.Common"
+    mc:Ignorable="d"
+     d:DesignHeight="768"
+      d:DesignWidth="1366"
+      DataContext="{Binding Main, Source={StaticResource Locator}}">
+
+    
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Skins/MainSkin.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <TextBox x:Name="textboxOfPassword" HorizontalAlignment="Left" Margin="242,421,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="815" Height="68" LostFocus="textboxOfPassword_LostFocus" />
+        <TextBox x:Name="textboxOfMail" HorizontalAlignment="Left" Margin="242,222,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="815" Height="68"  LostFocus="textboxOfMail_LostFocus" />
+        <TextBox HorizontalAlignment="Left" Margin="242,130,0,0" TextWrapping="Wrap" Text="    MAİL" VerticalAlignment="Top" Width="102"/>
+        <TextBox HorizontalAlignment="Left" Margin="242,346,0,0" TextWrapping="Wrap" Text="PASSWORD" VerticalAlignment="Top"/>
+
+        <Button Command="{Binding Navigate}" x:Name="ButtonOfSubmit" Content="LOGIN&#xA;" HorizontalAlignment="Left" Margin="242,533,0,0" VerticalAlignment="Top" Width="815" Height="80" FontSize="35"/>
 
     </Grid>
 </Page>

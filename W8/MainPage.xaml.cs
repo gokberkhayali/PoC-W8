@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonComponents.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -34,5 +35,31 @@ namespace W8
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
+
+
+        public CommonComponents.ViewModel.MainViewModel Vm
+        {
+            get
+            {
+                return (MainViewModel)DataContext;
+            }
+
+        }
+        
+        
+        private void textboxOfMail_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var textbox = (TextBox)sender;
+            Vm.Mail = textbox.Text;
+
+        }
+
+        private void textboxOfPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+            var textbox = (TextBox)sender;
+            Vm.Password = textbox.Text;
+        }
+
+
     }
 }
