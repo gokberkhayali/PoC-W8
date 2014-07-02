@@ -14,13 +14,10 @@ using Windows.UI.Xaml.Navigation;
 using W8.Views;
 using Windows.UI.Popups;
 
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace W8
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
+    
     public sealed partial class SecondPage : Page
     {
 
@@ -61,14 +58,9 @@ namespace W8
 
 
 
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
         }
-
-
-
-        
 
         private void ButtonNext_Click(object sender, RoutedEventArgs e)
         {
