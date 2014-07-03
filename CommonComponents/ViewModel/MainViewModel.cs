@@ -35,11 +35,6 @@ namespace CommonComponents.ViewModel
         private string _password = string.Empty;
         
         
-        
-        
-  
-
-    
         public string WelcomeTitle
         {
             get

@@ -41,7 +41,7 @@ namespace W8
         {
             get
             {
-                return (MainViewModel)DataContext;
+                return (CommonComponents.ViewModel.MainViewModel)DataContext;
             }
 
         }

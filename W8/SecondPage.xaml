@@ -13,7 +13,7 @@
       DataContext="{Binding Main, Source={StaticResource Locator}}">
 
     <Page.BottomAppBar>
-        <AppBar>
+        <AppBar  IsSticky="True" IsOpen="True">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -22,7 +22,9 @@
                 <StackPanel Orientation="Horizontal">
                     <Button Content="Prev" Width="140" Height="80" Click="ButtonPrev_Click" />
                     <Button Content="Next" Width="140" Height="80" Click="ButtonNext_Click" />
+                    <Button Content="Go Back To Login Page" Width="200" Height="80" Command="{Binding ComeBack}" />
                    
+
                 </StackPanel>
                 
             </Grid>
@@ -38,13 +40,10 @@
     </Page.Resources>
     
     
-
-
     <Grid x:Name="ContentPanel" 
          
         Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <Button Command="{Binding ComeBack }" Content="GO BACK " HorizontalAlignment="Left" Margin="645,495,0,0" VerticalAlignment="Top" Height="71" Width="123" FontSize="12" />
-        <StackPanel Orientation="Horizontal" 
+         <StackPanel Orientation="Horizontal" 
         HorizontalAlignment="Left" 
         Height="130"
         Margin="90,190,0,0" 
@@ -52,8 +51,5 @@
         Width="1190"
             x:Name="StackPanel1" />
         
-        <Button Content="&gt;" HorizontalAlignment="Left" Margin="866,495,0,0" VerticalAlignment="Top" Click="ButtonNext_Click" Width="123" Height="71" FontSize="30"/>
-        <Button Content="&lt;" HorizontalAlignment="Left" Margin="1068,495,0,0" VerticalAlignment="Top" Click="ButtonPrev_Click" Width="123" Height="71" FontSize="30" />
-
     </Grid>
 </Page>
